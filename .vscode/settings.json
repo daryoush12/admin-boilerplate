@@ -1,0 +1,9 @@
+{
+    "jumpToAliasFile.alias": {
+        "@Components": "d:\\Projects\\admin-boilerplate\\src\\Components",
+        "@Actions": "d:\\Projects\\admin-boilerplate\\src\\Store\\Actions",
+        "@ActionTypes": "d:\\Projects\\admin-boilerplate\\src\\App\\Store\\Actions\\Types",
+        "@Reducers": "d:\\Projects\\admin-boilerplate\\src\\Store\\Reducers",
+        "@Store": "d:\\Projects\\admin-boilerplate\\src\\Store"
+    }
+}

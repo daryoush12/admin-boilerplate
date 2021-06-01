@@ -44,6 +44,17 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'svg-url-loader',
+                        options: {
+                            limit: 10000,
+                        },
+                    },
+                ],
+            },
         ],
     },
     mode: 'development',
@@ -75,6 +86,7 @@ module.exports = {
             ),
             '@Reducers': path.resolve(__dirname, 'src/Store/Reducers/'),
             '@Store': path.resolve(__dirname, 'src/Store/'),
+            '@Hooks': path.resolve(__dirname, 'src/Hooks/'),
         },
     },
 }

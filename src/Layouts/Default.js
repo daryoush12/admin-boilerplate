@@ -6,6 +6,7 @@ import {
     NotificationOutlined,
 } from '@ant-design/icons'
 import styled from 'styled-components'
+import Notify from '@Components/notify'
 
 const { SubMenu } = Menu
 const { Header, Footer, Sider, Content } = Layout
@@ -13,6 +14,7 @@ const { Header, Footer, Sider, Content } = Layout
 export default function Default({ children }) {
     return (
         <Layout style={{ height: '100vh' }}>
+            <Notify />
             <Header className="header">
                 <div className="logo" />
                 <Menu

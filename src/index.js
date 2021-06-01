@@ -7,12 +7,22 @@ import { ThemeProvider } from 'styled-components'
 import theme from './Config/theme'
 import 'antd/dist/antd.css'
 import './main.less'
+import { FirebaseAuthProvider } from '@react-firebase/auth'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import firebaseConfig from './Config/firebase'
+import { NotificationProvider } from './Hooks/Notification/notifications'
+import { UserProvider } from './Hooks/user'
 
 ReactDOM.render(
     <Provider store={store}>
-        <ThemeProvider theme={theme}>
-            <App></App>
-        </ThemeProvider>
+        <UserProvider>
+            <ThemeProvider theme={theme}>
+                <NotificationProvider>
+                    <App></App>
+                </NotificationProvider>
+            </ThemeProvider>
+        </UserProvider>
     </Provider>,
     document.getElementById('root')
 )

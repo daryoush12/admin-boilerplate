@@ -6,7 +6,8 @@
             "@Actions/*": ["./src/Store/Actions/*"],
             "@ActionTypes/*": ["./src/Store/Actions/Types/*"],
             "@Reducers/*": ["./src/Store/Reducers/*"],
-            "@Store/*": ["./src/Store/*"]
+            "@Store/*": ["./src/Store/*"],
+            "@Hooks/*": ["./src/Hooks/*"]
         }
     }
 }

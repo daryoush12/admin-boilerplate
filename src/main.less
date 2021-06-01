@@ -18,12 +18,77 @@
 }
 
 .LoginCard {
-    width: 250px;
-    height: 150px;
+    width: 450px;
+    height: 350px;
 
     background-color: @card-color;
     border: solid;
     border-color: @card-border-color;
     border-width: 1px;
     padding: 2em;
+    margin: auto;
+}
+
+.empty-layout {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.login-button {
+    width: 100%;
+    height: 40px;
+}
+
+.forgot-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.login-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.logo {
+    background-image: url('./Assets/Images/logo.svg');
+    width: 100px;
+    height: 50px;
+}
+
+.h2 {
+    color: @text-color;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.h2 {
+    color: @text-color;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0px;
+}
+
+html,
+body {
+    background-color: #ebebeb;
+    margin: 0px;
 }
