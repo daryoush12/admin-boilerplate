@@ -1,30 +1,48 @@
 var path = require('path')
 const webpack = require('webpack')
 const htmlwebpackplugin = require('html-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-    .BundleAnalyzerPlugin
+const BundleAnalyzerPlugin =
+    require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
                 },
             },
             {
                 test: /\.html$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                    },
-                ],
+                use: ['html-loader'],
             },
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.less$/i,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            lessOptions: {
+                                javascriptEnabled: true,
+                            },
+                        },
+                    },
+                ],
             },
         ],
     },

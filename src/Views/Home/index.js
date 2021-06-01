@@ -6,16 +6,8 @@ import Avatar from '@Components/avatar'
 
 export default function Home() {
     return (
-        <View>
-            <Grid>
-                <Column width={20}>One :D</Column>
-                <Column width={60}>
-                    <Card>Wow</Card>
-                </Column>
-                <Column width={20}>
-                    <Avatar />
-                </Column>
-            </Grid>
-        </View>
+        <div className="view">
+            <div className="card">Something</div>
+        </div>
     )
 }

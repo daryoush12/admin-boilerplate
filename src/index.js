@@ -5,7 +5,8 @@ import store from '@Store/'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import theme from './Config/theme'
-import './index.css'
+import 'antd/dist/antd.css'
+import './main.less'
 
 ReactDOM.render(
     <Provider store={store}>
