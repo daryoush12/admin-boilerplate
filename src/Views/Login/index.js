@@ -14,8 +14,10 @@ export default function Login() {
 
     const submitForm = (e) => {
         e.preventDefault()
-        authenticate(form.email, form.password)
-        addNotification('Login success.', 'INFO')
+        authenticate(form.email, form.password).then(() => {
+            addNotification('Login success.', 'INFO')
+            history.push('/')
+        })
     }
 
     const handleInput = (e) => {

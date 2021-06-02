@@ -9,17 +9,16 @@ export default function Notify() {
         <div>
             {notifications.length > 0 &&
                 notifications.map((notification, index) => (
-                    <>
+                    <span key={index}>
                         {notification.level === levels.INFO && (
                             <Alert
-                                key={index}
                                 message={notification.message}
                                 type="success"
                                 showIcon
                                 onClose={removeAtIndex(index)}
                             />
                         )}
-                    </>
+                    </span>
                 ))}
         </div>
     )

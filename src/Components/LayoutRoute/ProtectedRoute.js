@@ -7,7 +7,7 @@ export default function ProtectedRoute({ component, Layout, exact, path }) {
     console.log(user)
     return (
         <Layout>
-            {user.loggedIn ? (
+            {user.loggedIn === true ? (
                 <Route exact={exact} path={path} component={component} />
             ) : (
                 <Redirect to="login" />

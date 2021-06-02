@@ -8,6 +8,8 @@ import Empty from '../Layouts/Empty'
 
 import Home from './Home'
 import Login from './Login'
+import Edit from './Event/edit'
+import Events from './Event'
 
 function App() {
     return (
@@ -17,6 +19,19 @@ function App() {
                     exact
                     path="/"
                     component={Home}
+                    Layout={Default}
+                />
+                <ProtectedRoute
+                    exact
+                    path="/events"
+                    component={Events}
+                    Layout={Default}
+                />
+
+                <ProtectedRoute
+                    exact
+                    path="/edit"
+                    component={Edit}
                     Layout={Default}
                 />
                 <LayoutRoute

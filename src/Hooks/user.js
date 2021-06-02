@@ -1,28 +1,39 @@
-import React, { useState, createContext, useContext } from 'react'
+import React, { useState, createContext, useContext, useEffect } from 'react'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import firebaseConfig from '../Config/firebase'
+import { useCookies } from 'react-cookie'
 
 const app = firebase.initializeApp(firebaseConfig)
 
 export default function useUser() {
-    const [user, setUser] = useState({
+    const [cookies, setCookie, removeCookie] = useCookies()
+
+    const user = cookies['user'] || {
         data: null,
         loggedIn: false,
-    })
-
-    const authenticate = (email, password) => {
-        app.auth()
-            .signInWithEmailAndPassword(email, password)
-            .then((user) => {
-                setUser({
-                    loggedIn: true,
-                    data: user.user.providerData[0],
-                })
-            })
     }
 
-    return { user, authenticate }
+    useEffect(() => {}, [])
+
+    const authenticate = async (email, password) => {
+        await app
+            .auth()
+            .signInWithEmailAndPassword(email, password)
+            .then((user) => {
+                let userObject = {
+                    loggedIn: true,
+                    data: user.user.providerData[0],
+                }
+                setCookie('user', userObject)
+            })
+            .catch((e) => console.log(e.message))
+    }
+
+    const logout = async () => {
+        await removeCookie('user')
+    }
+    return { user, authenticate, logout }
 }
 
 const UserContext = createContext()

@@ -16,13 +16,13 @@ import { UserProvider } from './Hooks/user'
 
 ReactDOM.render(
     <Provider store={store}>
-        <UserProvider>
-            <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+            <UserProvider>
                 <NotificationProvider>
                     <App></App>
                 </NotificationProvider>
-            </ThemeProvider>
-        </UserProvider>
+            </UserProvider>
+        </ThemeProvider>
     </Provider>,
     document.getElementById('root')
 )

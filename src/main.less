@@ -6,15 +6,23 @@
 }
 
 .card {
-    background-color: @card-color;
-    border: solid;
-    border-color: @card-border-color;
-    border-width: 1px;
-    padding: 2em;
+    width: 30%;
+    margin-right: 2%;
+}
+
+.view-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin-bottom: 1em;
 }
 
 .view {
-    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .LoginCard {
@@ -71,7 +79,9 @@
 .logo {
     background-image: url('./Assets/Images/logo.svg');
     width: 100px;
-    height: 50px;
+    height: 100%;
+    float: left;
+    background-position: center;
 }
 
 .h2 {
@@ -91,4 +101,31 @@ html,
 body {
     background-color: #ebebeb;
     margin: 0px;
+}
+
+.user-icon {
+    height: 70%;
+    border-radius: 100%;
+    border: solid;
+    border-color: #f5f5f5c4;
+    border-width: 1px;
+}
+
+.header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.InfoGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.InfoGroup.Paragraph {
+    display: flex;
+    flex-direction: column;
 }
