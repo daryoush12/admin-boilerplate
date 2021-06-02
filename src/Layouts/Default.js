@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import { Layout, Menu, Breadcrumb } from 'antd'
+import { Layout, Menu, Dropdown } from 'antd'
 import {
     UserOutlined,
     LaptopOutlined,
     NotificationOutlined,
 } from '@ant-design/icons'
 import styled from 'styled-components'
-import Notify from '@Components/notify'
+import { Link } from 'react-router-dom'
+import CurrentPath from '@Components/CurrentPath'
+import defaultUserIcon from '../Assets/Images/avatar.png'
 
 const { SubMenu } = Menu
 const { Header, Footer, Sider, Content } = Layout
@@ -14,13 +16,13 @@ const { Header, Footer, Sider, Content } = Layout
 export default function Default({ children }) {
     return (
         <Layout style={{ height: '100vh' }}>
-            <Notify />
             <Header className="header">
                 <div className="logo" />
                 <Menu
                     theme="dark"
                     mode="horizontal"
                     defaultSelectedKeys={['2']}
+                    style={{ flex: 'auto' }}
                 >
                     <Menu.Item key="1">nav 1</Menu.Item>
                     <Menu.Item key="2">nav 2</Menu.Item>
@@ -38,12 +40,11 @@ export default function Default({ children }) {
                         <SubMenu
                             key="sub1"
                             icon={<UserOutlined />}
-                            title="subnav 1"
+                            title="Seasons"
                         >
-                            <Menu.Item key="1">option1</Menu.Item>
-                            <Menu.Item key="2">option2</Menu.Item>
-                            <Menu.Item key="3">option3</Menu.Item>
-                            <Menu.Item key="4">option4</Menu.Item>
+                            <Menu.Item key="1">
+                                <Link to="/events">View</Link>
+                            </Menu.Item>
                         </SubMenu>
                         <SubMenu
                             key="sub2"
@@ -68,11 +69,7 @@ export default function Default({ children }) {
                     </Menu>
                 </Sider>
                 <Layout style={{ padding: '0 24px 24px' }}>
-                    <Breadcrumb style={{ margin: '16px 0' }}>
-                        <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        <Breadcrumb.Item>List</Breadcrumb.Item>
-                        <Breadcrumb.Item>App</Breadcrumb.Item>
-                    </Breadcrumb>
+                    <CurrentPath />
                     <Content
                         className="site-layout-background"
                         style={{
