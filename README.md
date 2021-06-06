@@ -1,6 +1,6 @@
 ![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)
 
-# Boilerplate for react
+# Admin Dashboard Boilerplate for react
 
 - Basic react template for new projects.
 
