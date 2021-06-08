@@ -1,6 +1,6 @@
 import React from 'react'
 import { Timeline, Button, Card, Divider, Typography } from 'antd'
-import { PlusCircleFilled } from '@ant-design/icons'
+import { PlusCircleFilled, DeleteFilled, EditFilled } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 
 const { Item } = Timeline
@@ -13,16 +13,25 @@ export default function eventEditor() {
             <Divider />
             <Timeline mode="alternate">
                 <Item>
-                    22.4 21.00 Season Starts{' '}
-                    <Link to="/events/event">View</Link>
+                    22.4 21.00 Season Starts
+                    <div className="event-actions">
+                        <Button icon={<EditFilled />} />
+                        <Button icon={<DeleteFilled />} />
+                    </div>
                 </Item>
                 <Item>
-                    22.4 21.00 Season Starts{' '}
-                    <Link to="/events/event">View</Link>
+                    22.4 21.00 Season Starts
+                    <div className="event-actions">
+                        <Button icon={<EditFilled />} />
+                        <Button icon={<DeleteFilled />} />
+                    </div>
                 </Item>
                 <Item>
-                    22.4 21.00 Season Starts{' '}
-                    <Link to="/events/event">View</Link>
+                    22.4 21.00 Season Starts
+                    <div className="event-actions">
+                        <Button icon={<EditFilled />} />
+                        <Button icon={<DeleteFilled />} />
+                    </div>
                 </Item>
                 <Item
                     dot={<Button shape="circle" icon={<PlusCircleFilled />} />}

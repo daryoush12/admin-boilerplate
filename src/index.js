@@ -11,16 +11,13 @@ import { FirebaseAuthProvider } from '@react-firebase/auth'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import firebaseConfig from './Config/firebase'
-import { NotificationProvider } from './Hooks/Notification/notifications'
 import { UserProvider } from './Hooks/user'
 
 ReactDOM.render(
     <Provider store={store}>
         <ThemeProvider theme={theme}>
             <UserProvider>
-                <NotificationProvider>
-                    <App></App>
-                </NotificationProvider>
+                <App></App>
             </UserProvider>
         </ThemeProvider>
     </Provider>,

@@ -10,7 +10,6 @@ export default function useUser() {
     const [cookies, setCookie, removeCookie] = useCookies()
 
     const user = cookies['user'] || {
-        data: null,
         loggedIn: false,
     }
 
@@ -23,7 +22,7 @@ export default function useUser() {
             .then((user) => {
                 let userObject = {
                     loggedIn: true,
-                    data: user.user.providerData[0],
+                    ...user.user.providerData[0],
                 }
                 setCookie('user', userObject)
             })

@@ -10,6 +10,9 @@ import Home from './Home'
 import Login from './Login'
 import Edit from './Event/edit'
 import Events from './Event'
+import Register from './Register'
+import Settings from './Settings'
+import Recover from './Recover'
 
 function App() {
     return (
@@ -34,10 +37,30 @@ function App() {
                     component={Edit}
                     Layout={Default}
                 />
+
+                <ProtectedRoute
+                    exact
+                    path="/settings"
+                    component={Settings}
+                    Layout={Default}
+                />
                 <LayoutRoute
                     exact
                     path="/login"
                     component={Login}
+                    Layout={Empty}
+                />
+                <LayoutRoute
+                    exact
+                    path="/register"
+                    component={Register}
+                    Layout={Empty}
+                />
+
+                <LayoutRoute
+                    exact
+                    path="/recover"
+                    component={Recover}
                     Layout={Empty}
                 />
             </Switch>

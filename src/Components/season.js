@@ -9,15 +9,15 @@ export default function Season() {
             <Title>More Season 0.6.8 Details</Title>
             <Divider />
             <div className="InfoGroup">
-                <Typography>Name</Typography>
-                <Text>Value</Text>
+                <Typography>Participants</Typography>
+                <Text>100/100</Text>
             </div>
             <div className="InfoGroup">
-                <Typography>Name</Typography>
-                <Text>Value</Text>
+                <Typography>Starts</Typography>
+                <Text>21.08.2021</Text>
             </div>
             <div className="InfoGroup Paragraph">
-                <Typography>Name</Typography>
+                <Typography>Description</Typography>
                 <Paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Vivamus ac tristique nunc, a sollicitudin lectus. Aliquam
