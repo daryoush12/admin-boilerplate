@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Upload, message, Progress } from 'antd'
+import { Upload, message, Progress, Card } from 'antd'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 import firebase from 'firebase/app'
 
